@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Hiring Turing-Technologies  Full-Stack Web Developer Flutter-Developer">
+
+	<!-- title -->
+	<title>Hiring</title>
+
+	<!-- logo -->
+	<link rel="shortcut icon" type="image/png" href="img/logo-turing.png">
+	<!-- google font -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+	<!-- fontawesome -->
+	<link rel="stylesheet" href="css/all.min.css">
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<!-- owl carousel -->
+	<link rel="stylesheet" href="css/owl.carousel.css">
+	<!-- magnific popup -->
+	<link rel="stylesheet" href="css/magnific-popup.css">
+	<!-- animate css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- mean menu css -->
+	<link rel="stylesheet" href="css/meanmenu.min.css">
+	<!-- main style -->
+	<link rel="stylesheet" href="css/main.css">
+	<!-- responsive -->
+	<link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body>
+
+	<!--PreLoader-->
+	<div class="loader">
+		<div class="loader-inner">
+			<div class="circle"></div>
+		</div>
+	</div>
+	<%- include('partials/nav_bar.ejs',) %>
+		<div class="breadcrumb-section breadcrumb-bg">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 offset-lg-2 text-center">
+						<div class="breadcrumb-text">
+							<h1>Join our team NOW </h1>
+							<p>We are building our team and growing fast. Join us and be part of our journey to build
+								the most powerful solutions
+							</p>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end breadcrumb section -->
+
+		<!-- latest news -->
+		<div class="latest-news mt-150 mb-150">
+			<div class="container">
+				<div class="row">
+
+					<% jobs.forEach(function(job,){ %>
+						<div class="col-lg-4 col-md-6">
+							<div class="single-latest-news">
+								<a href="job_details?id=<%= job.id %>">
+									<div class="latest-news-bg news-bg-1"
+										style="background-image:url('<%- job.img_url %>');">
+									</div>
+								</a>
+								<div class="news-text-box">
+									<h3><a href="job_details?id=<%= job.id %>">
+											<%= job.title %>
+										</a></h3>
+									<p class="blog-meta">
+										<span class="date"><i class="fas fa-calendar"></i>
+											<%= job.date %>
+										</span>
+									</p>
+									<p class="excerpt">
+										<%= job.about_job %>
+									</p>
+									<a href="job_details?id=<%= job.id %>" class="read-more-btn">read more <i
+											class="fas fa-angle-right"></i></a>
+								</div>
+							</div>
+						</div>
+						<% })%>
+				</div>
+			</div>
+		</div>
+		<!-- end latest news -->
+
+		<!-- logo carousel -->
+		<div class="logo-carousel-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="logo-carousel-inner">
+							<div class="single-logo-item">
+								<img src="img/company-logos/1.png" alt="">
+							</div>
+							<div class="single-logo-item">
+								<img src="img/company-logos/2.png" alt="">
+							</div>
+							<div class="single-logo-item">
+								<img src="img/company-logos/3.png" alt="">
+							</div>
+							<div class="single-logo-item">
+								<img src="img/company-logos/4.png" alt="">
+							</div>
+							<div class="single-logo-item">
+								<img src="img/company-logos/5.png" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<%- include('partials/footer.ejs',) %>
+			<script src="js/jquery-1.11.3.min.js"></script>
+			<!-- bootstrap -->
+			<script src="bootstrap/js/bootstrap.min.js"></script>
+			<!-- count down -->
+			<script src="js/jquery.countdown.js"></script>
+			<!-- isotope -->
+			<script src="js/jquery.isotope-3.0.6.min.js"></script>
+			<!-- waypoints -->
+			<script src="js/waypoints.js"></script>
+			<!-- owl carousel -->
+			<script src="js/owl.carousel.min.js"></script>
+			<!-- magnific popup -->
+			<script src="js/jquery.magnific-popup.min.js"></script>
+			<!-- mean menu -->
+			<script src="js/jquery.meanmenu.min.js"></script>
+			<!-- sticker js -->
+			<script src="js/sticker.js"></script>
+			<!-- main js -->
+			<script src="js/main.js"></script>
+
+</body>
+
+</html>

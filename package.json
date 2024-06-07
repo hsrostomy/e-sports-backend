@@ -1,0 +1,45 @@
+{
+  "name": "gym-manager-backend",
+  "version": "1.0.0",
+  "description": "gym manager backend",
+  "main": "index",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "keywords": [
+    "backend",
+    "gym",
+    "turing",
+    "manager"
+  ],
+  "author": "rostom hadj said",
+  "license": "ISC",
+  "dependencies": {
+    "@vonage/server-sdk": "^2.11.2",
+    "axios": "^1.2.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.0",
+    "compress-images": "^2.0.5",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-fileupload": "^1.4.0",
+    "express-rate-limit": "^6.6.0",
+    "express-validator": "^6.14.2",
+    "fcm-node": "^1.6.1",
+    "firebase-admin": "^11.4.1",
+    "fs": "^0.0.1-security",
+    "gifsicle": "^5.2.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.4.6",
+    "node-cron": "^3.0.2",
+    "nodemailer": "^6.8.0",
+    "nodemon": "^2.0.19",
+    "path": "^0.12.7",
+    "pdfkit": "^0.13.0",
+    "pngquant-bin": "^6.0.1",
+    "puppeteer": "^19.4.1",
+    "qrcode": "^1.5.1"
+  }
+}

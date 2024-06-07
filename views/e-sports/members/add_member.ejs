@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Ajouter un membre</title>
+
+    <link rel="icon" type="image/png" sizes="16x16" href="img/e-sport.jpg">
+ 
+    <link href="vendor/jquery-smartwizard/dist/css/smart_wizard.min.css" rel="stylesheet">
+ 
+    <link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    </div>
+    <div id="main-wrapper">
+        <div class="nav-header">
+            <a href="index.html" class="brand-logo">
+                <img class="brand-title" src="img/logo-full.png" alt="">
+            </a>
+            <div class="nav-control">
+            </div>
+        </div>
+        <%- include('../../partials/side_bar_esports.ejs',) %>
+            <div class="content-body" style="padding-top:20px">
+                <div class="container-fluid">
+                    <div class="page-titles">
+                        <h4>Ajouter un membre</h4>
+                        <h4 class="card-title" style="color: grey;font-size:16px;font-weight: 500;">Entrez les informations pour ajouter un nouveau membre</h4>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-12 col-xxl-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="profile-pic-div">
+                                        <img src="image.jpg" id="photo">
+                                        <input type="file" id="file">
+                                        <label for="file" id="uploadBtn">Choose Photo</label>
+                                      </div>
+                                </div>
+                                <div class="card-body">
+                                    <div id="smartwizard" class="form-wizard order-create">
+                                        <ul class="nav nav-wizard">
+                                            <li><a class="nav-link" href="#wizard_Service">
+                                                </a></li>
+                                        </ul>
+                                        <div class="tab-content">
+                                            <div id="wizard_Service" class="tab-pane" role="tabpanel">
+                                                <div class="row">
+                                                    <div class="col-lg-6 mb-2">
+                                                        <div class="form-group">
+                                                            <label class="text-label">Prénom*</label>
+                                                            <input type="text" name="firstName" class="form-control"
+                                                                placeholder="Parsley" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 mb-2">
+                                                        <div class="form-group">
+                                                            <label class="text-label">Nom*</label>
+                                                            <input type="text" name="lastName" class="form-control"
+                                                                placeholder="Montana" required>
+                                                        </div>
+                                                    </div>
+                                                    <form action="/add_member" method="POST">
+                                                        <div class="form-group mb-0">
+                                                            <label class="text-label"
+                                                                style="padding-left: 15px;padding-right:30px;padding-bottom: 30px;">Sexe*</label>
+                                                            <label class="radio-inline mr-3"><input type="radio"
+                                                                    name="optradio"> Homme</label>
+                                                            <label class="radio-inline mr-3"><input type="radio"
+                                                                    name="optradio"> Femme</label>
+                                                        </div>
+                                                    </form>
+                                                    <div class="col-lg-12 mb-2">
+                                                        <div class="form-group">
+                                                            <label class="text-label">E-mail*</label>
+                                                            <input type="email" class="form-control"
+                                                                id="inputGroupPrepend2"
+                                                                aria-describedby="inputGroupPrepend2"
+                                                                placeholder="example@example.com.com" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 mb-2">
+                                                        <div class="form-group">
+                                                            <label class="text-label">Numéro de téléphone*</label>
+                                                            <input type="text" name="phoneNumber" class="form-control"
+                                                                placeholder="(+213) 066 921 7030" required>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-12 mb-2">
+                                                        <div class="form-group">
+                                                            <label class="text-label">Adresse</label>
+                                                            <input type="text" name="address" class="form-control"
+                                                                placeholder="Kouba,Jolie-vue Alger" required>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
+                                                        <label>Date de naissance</label>
+                                                        <input type="text" class="form-control"
+                                                            placeholder="le date de naissance" id="mdate">
+                                                    </div>
+                                                  
+                                                </div>
+                                                
+                                                <button  type="submit" formaction="/action_page2.php" class="btn btn-outline-primary">Enregistrer</button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <script src="vendor/global/global.min.js"></script>
+    <script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <script src="js/custom.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/deznav-init.js"></script>
+
+
+
+
+    <script src="vendor/jquery-steps/build/jquery.steps.min.js"></script>
+    <script src="vendor/jquery-validation/jquery.validate.min.js"></script>
+    <!-- Form validate init -->
+    <script src="js/plugins-init/jquery.validate-init.js"></script>
+
+    <script src="js/plugins-init/material-date-picker-init.js"></script>
+    <script src="vendor/jquery-smartwizard/dist/js/jquery.smartWizard.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+            // SmartWizard initialize
+            $('#smartwizard').smartWizard();
+        });
+    </script>
+
+</body>
+
+</html>

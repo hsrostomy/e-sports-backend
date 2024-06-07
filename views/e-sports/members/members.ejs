@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>E-Sport Members</title>
+	<link rel="icon" type="image/png" sizes="16x16" href="img/e-sport.jpg">
+	<link href="vendor/jqvmap/css/jqvmap.min.css" rel="stylesheet">
+	<link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<link href="vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+	<div id="preloader">
+		<div class="sk-three-bounce">
+			<div class="sk-child sk-bounce1"></div>
+			<div class="sk-child sk-bounce2"></div>
+			<div class="sk-child sk-bounce3"></div>
+		</div>
+	</div>
+
+	<div id="main-wrapper">
+
+		<div class="nav-header">
+			<a href="index.html" class="brand-logo">
+				<img class="brand-title" src="img/logo-full.png" alt="">
+			</a>
+
+			<div class="nav-control">
+				<div class="hamburger">
+					<span class="line"></span><span class="line"></span><span class="line"></span>
+				</div>
+			</div>
+		</div>
+
+		<div class="header">
+			<div class="header-content">
+				<nav class="navbar navbar-expand">
+					<div class="collapse navbar-collapse justify-content-between">
+
+						<ul class="navbar-nav header-right">
+
+
+							<li class="nav-item dropdown notification_dropdown">
+
+
+							</li>
+							<li class="nav-item dropdown header-profile">
+								<a class="nav-link" href="javascript:void(0)" role="button" data-toggle="dropdown">
+									<!-- <div class="header-info">
+										<span class="text-black">Hello,<strong>Franklin</strong></span>
+										<p class="fs-12 mb-0">Super Admin</p>
+									</div> -->
+									<img src="img/profile/17.jpg" width="20" alt="" />
+								</a>
+								<div class="dropdown-menu dropdown-menu-right">
+									<a href="app-profile.html" class="dropdown-item ai-icon">
+										<svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" class="text-primary"
+											width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+											stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+											<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+											<circle cx="12" cy="7" r="4"></circle>
+										</svg>
+										<span class="ml-2">Profile </span>
+									</a>
+									<a href="email-inbox.html" class="dropdown-item ai-icon">
+										<svg id="icon-inbox" xmlns="http://www.w3.org/2000/svg" class="text-success"
+											width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+											stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+											<path
+												d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+											</path>
+											<polyline points="22,6 12,13 2,6"></polyline>
+										</svg>
+										<span class="ml-2">Inbox </span>
+									</a>
+									<a href="page-login.html" class="dropdown-item ai-icon">
+										<svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger"
+											width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+											stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+											<path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+											<polyline points="16 17 21 12 16 7"></polyline>
+											<line x1="21" y1="12" x2="9" y2="12"></line>
+										</svg>
+										<span class="ml-2">Logout </span>
+									</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<%- include('../../partials/side_bar_esports.ejs',) %>
+
+			<div class="content-body">
+				<!-- row -->
+				<div class="container-fluid">
+					<div class="form-head align-items-center d-flex mb-sm-4 mb-3">
+						<div class="mr-auto">
+							<h2 class="text-black font-w600">Membres</h2>
+							<a href="/add_member" class="btn btn-primary mr-3"
+							> + Ajouter un membre</a>
+						</div>
+						<div>
+							<div class="form-head page-titles d-flex mb-md-4">
+								<div class="d-sm-flex d-block mb-0 align-items-end">
+									<ul class="nav nav-pills review-tab mr-3 mb-2">
+										<li class="nav-item">
+											<a href="?status=3" class="nav-link active" data-toggle="tab"
+												aria-expanded="false">TOUS</a>
+										</li>
+										<li class="nav-item">
+											<a href="?status=0" class="nav-link" data-toggle="tab"
+												aria-expanded="false">ACTIFS</a>
+										</li>
+										<li class="nav-item">
+											<a href="?status=2" class="nav-link" data-toggle="tab"
+												aria-expanded="false">NOUVEAUX</a>
+										</li>
+										<li class="nav-item">
+											<a href="?status=1" class="nav-link" data-toggle="tab"
+												aria-expanded="true">EXPIRES</a>
+										</li>
+									</ul>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-12">
+					<div class="card">
+						<div class="card-body">
+							<div class="table-responsive">
+								<table id="example3" class="display min-w850">
+									<thead>
+										<tr>
+											<th></th>
+											<th>Name</th>
+											<th>Sport & ForFit</th>
+											<th>Gender</th>
+											<th>Status</th>
+											<th>Mobile</th>
+											<th>Email</th>
+											<th>Action</th>
+										</tr>
+									</thead>
+									<tbody>
+
+										<% memebrs.forEach(function(member,){ %>
+											<tr>
+												<td><img class="rounded-circle" width="35" src="img/profile/small/pic1.jpg" alt=""></td>
+												<td><a href="javascript:void(0);"><strong> <%= member.member.first_name %>  <%= member.member.second_name %></strong></a></td>
+												<td><span><%= member.Subscription[0]["plan_name"]%></span></td>
+												<td><%= member.member.gender === 0 ? "Homme" : "Femme" %></td>
+												<td><span class= "<%= member.member.status === 0 ? "badge light badge-success" : "badge light badge-warning" %>"> <%= member.member.status === 0 ? "ACTIVE" : "EXPIERD" %> </span></td>
+												<td><a href=""><%= member.member.phone_number %></a></td>
+												<td><a href=""><%= member.member.email %></a></td>
+												<td>
+													<div class="d-flex">
+														<a href="#" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+														<a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+													</div>												
+												</td>												
+											</tr>
+											<% })%>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+
+	<script src="vendor/global/global.min.js"></script>
+	<script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+	<script src="js/custom.min.js"></script>
+	<script src="js/deznav-init.js"></script>
+	<script src="js/main.js"></script>
+	<!-- Datatable -->
+	<script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
+	<script src="js/plugins-init/datatables.init.js"></script>
+
+
+</body>
+
+</html>
